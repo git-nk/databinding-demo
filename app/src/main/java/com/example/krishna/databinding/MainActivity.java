@@ -13,16 +13,18 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private Login login = new Login();
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setLogin(login);
     }
 
     public void doLogin(View view) {
         Log.d(TAG, login.getUsername());
         Log.d(TAG, login.getPassword());
+        binding.setLogin(login);
     }
 }

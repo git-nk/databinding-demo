@@ -34,5 +34,9 @@
             android:layout_marginTop="20dp"
             android:onClick="doLogin"
             android:text="@string/login" />
+
+        <include xmlns:tools="http://schemas.android.com/tools"
+            layout="@layout/layout_message"
+            tools:loginValue="@={login}" />
     </LinearLayout>
 </layout>
