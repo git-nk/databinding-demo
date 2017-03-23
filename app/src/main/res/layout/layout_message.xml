@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="start"
+            android:textColor="@{loginValue.allFieldsValid ? @color/colorPrimary : @color/colorAccent}"
             android:text='@{String.format("Username: %s\nPassword: %s", loginValue.username, loginValue.password)}' />
 
         <TextView
