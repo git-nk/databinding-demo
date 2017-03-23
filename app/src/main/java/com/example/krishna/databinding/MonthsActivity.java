@@ -2,7 +2,7 @@ package com.example.krishna.databinding;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
@@ -37,7 +37,7 @@ public class MonthsActivity extends AppCompatActivity {
 
         MonthAdapter monthAdapter = new MonthAdapter(monthlyDataArrayList);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setAdapter(monthAdapter);
 
     }
