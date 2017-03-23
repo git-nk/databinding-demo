@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.krishna.databinding.databinding.ActivityMainBinding;
 import com.example.krishna.databinding.model.Login;
@@ -26,5 +27,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, login.getUsername());
         Log.d(TAG, login.getPassword());
         binding.setLogin(login);
+    }
+
+    public void showToast() {
+        Toast.makeText(this, "Provide all details please...", Toast.LENGTH_SHORT).show();
     }
 }
