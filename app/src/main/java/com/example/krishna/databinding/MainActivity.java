@@ -4,7 +4,6 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 
 import com.example.krishna.databinding.databinding.ActivityMainBinding;
 import com.example.krishna.databinding.model.Login;
@@ -20,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setLogin(login);
+        binding.setActivity(this);
     }
 
-    public void doLogin(View view) {
+    public void doLogin() {
         Log.d(TAG, login.getUsername());
         Log.d(TAG, login.getPassword());
         binding.setLogin(login);

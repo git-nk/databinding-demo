@@ -6,6 +6,10 @@
         <variable
             name="login"
             type="com.example.krishna.databinding.model.Login" />
+
+        <variable
+            name="activity"
+            type="com.example.krishna.databinding.MainActivity" />
     </data>
 
     <LinearLayout
@@ -32,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:onClick="doLogin"
+            android:onClick="@{(view)-> activity.doLogin()}"
             android:text="@string/login" />
 
         <include xmlns:tools="http://schemas.android.com/tools"
