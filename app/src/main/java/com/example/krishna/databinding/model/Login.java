@@ -1,6 +1,8 @@
 package com.example.krishna.databinding.model;
 
+import android.databinding.ObservableInt;
 import android.text.TextUtils;
+import android.view.View;
 
 /**
  * Created by krishna on March 23, 2017
@@ -8,10 +10,12 @@ import android.text.TextUtils;
 
 public class Login {
     private String username, password;
+    private ObservableInt show;
 
     public Login() {
         username = "asd";
         password = "dsa";
+        show = new ObservableInt(View.GONE);
     }
 
     public String getUsername() {
@@ -34,5 +38,14 @@ public class Login {
 
     public boolean isAllFieldsValid() {
         return !TextUtils.isEmpty(username.trim()) && !TextUtils.isEmpty(password.trim());
+    }
+
+    public ObservableInt getShow() {
+        return show;
+    }
+
+    public Login setShow(ObservableInt show) {
+        this.show = show;
+        return this;
     }
 }

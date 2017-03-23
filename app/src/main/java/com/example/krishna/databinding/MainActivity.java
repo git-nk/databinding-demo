@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.krishna.databinding.databinding.ActivityMainBinding;
@@ -31,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (login.getUsername().equalsIgnoreCase("movetonext")) {
             startActivity(new Intent(this, MonthsActivity.class));
+        } else if (login.getUsername().equalsIgnoreCase("hide")) {
+            login.getShow().set(View.GONE);
+        } else {
+            login.getShow().set(View.VISIBLE);
         }
     }
 
