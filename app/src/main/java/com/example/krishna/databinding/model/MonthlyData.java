@@ -18,6 +18,6 @@ public class MonthlyData {
     }
 
     public String getImage() {
-        return String.format(image, name);
+        return String.format(image, name.toLowerCase());
     }
 }

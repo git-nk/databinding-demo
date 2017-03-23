@@ -1,14 +1,10 @@
 package com.example.krishna.databinding.adapter;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.krishna.databinding.BR;
-import com.example.krishna.databinding.R;
+import com.example.krishna.databinding.databinding.RowItemMonthBinding;
 import com.example.krishna.databinding.model.MonthlyData;
 
 import java.util.ArrayList;
@@ -26,8 +22,9 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item_month, parent, false);
-        return new ViewHolder(DataBindingUtil.bind(view));
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        RowItemMonthBinding viewDataBinding = RowItemMonthBinding.inflate(inflater, parent, false);
+        return new ViewHolder(viewDataBinding);
     }
 
     @Override
@@ -41,16 +38,16 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthAdapter.ViewHolder> 
         return monthlyDataArrayList == null ? 0 : monthlyDataArrayList.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        private final ViewDataBinding viewDataBinding;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        private final RowItemMonthBinding viewDataBinding;
 
-        ViewHolder(ViewDataBinding viewDataBinding) {
+        ViewHolder(RowItemMonthBinding viewDataBinding) {
             super(viewDataBinding.getRoot());
             this.viewDataBinding = viewDataBinding;
         }
 
         void bind(MonthlyData data) {
-            viewDataBinding.setVariable(BR.monthlyData, data);
+            viewDataBinding.setMonthlyData(data);
             viewDataBinding.executePendingBindings();
         }
     }
