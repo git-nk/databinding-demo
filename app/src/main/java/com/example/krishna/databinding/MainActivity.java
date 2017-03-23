@@ -1,5 +1,6 @@
 package com.example.krishna.databinding;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, login.getUsername());
         Log.d(TAG, login.getPassword());
         binding.setLogin(login);
+
+        if (login.getUsername().equalsIgnoreCase("movetonext")) {
+            startActivity(new Intent(this, MonthsActivity.class));
+        }
     }
 
     public void showToast() {
