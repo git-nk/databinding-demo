@@ -1,5 +1,7 @@
 package com.example.krishna.databinding.model;
 
+import android.text.TextUtils;
+
 /**
  * Created by krishna on March 23, 2017
  */
@@ -28,5 +30,9 @@ public class Login {
     public Login setPassword(String password) {
         this.password = password;
         return this;
+    }
+
+    public boolean isAllFieldsValid() {
+        return !TextUtils.isEmpty(username.trim()) && !TextUtils.isEmpty(password.trim());
     }
 }
